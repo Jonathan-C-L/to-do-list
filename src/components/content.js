@@ -24,7 +24,6 @@ function Content(){
 function eventHandlers(){
     const content = document.querySelector(".content");
     const modal = document.querySelector(".new-list-modal");
-    const filter = document.querySelector(".filter");
     const todoList = document.querySelector(".todo-cards");
 
     // content event listener - contains lists and add new list button
@@ -41,7 +40,7 @@ function eventHandlers(){
         } 
         if(buttonCheck(e, "modal-submit")){
             createTodo();
-            renderTodoCards(filter.textContent);
+            renderTodoCards();
 
             modal.close();
         }
@@ -49,16 +48,16 @@ function eventHandlers(){
     // removes todo item when clicked
     addGlobalEventListener("click", ".todo-card", todoList, (e)=>{
         removeTodo(e.target.id);
-        renderTodoCards(filter.textContent);
-        // console.log(e.target.id);
+        renderTodoCards();
     });
 }
 // helper function to check the selected button
 function buttonCheck(e, selector){
     return e.target.classList.contains(selector);
 }
-function renderTodoCards(selectedTimeRange){
+function renderTodoCards(){
     const cardContainer = document.querySelector(".todo-cards");
+    const filter = document.querySelector(".filter");
     const todoArray = todoCards();
 
     // reset the parent container to repopulate
@@ -72,7 +71,7 @@ function renderTodoCards(selectedTimeRange){
         const todo = JSON.parse(localStorage.getItem(localStorage.key(index)));
         let date = todo.date;
 
-        switch(selectedTimeRange){
+        switch(filter.textContent){
             case "Today":
                 if(isToday(date))
                     cardContainer.appendChild(e);

@@ -4,9 +4,26 @@
 "deploy": deploys the code to github pages,
 "initialize": installs dev dependencies for images, styling, and html
 
-# tests
-<!-- add tests in the future -->
+# dependencies
+1. date-fns - npm install date-fns --save
 
+# dev dependencies
+1. ESLint
+<!-- install eslint first -->
+npm init @eslint/config@latest
+<!-- to lint the js file -->
+npx eslint yourfile.js 
+2. Prettier
+<!-- install prettier -->
+npm install --save-dev --save-exact prettier
+<!-- emtpy config file to let tools know Prettier is being used -->
+node --eval "fs.writeFileSync('.prettierrc','{}\n')"
+<!-- create .prettierugnore file to exclude specified files from formatting -->
+node --eval "fs.writeFileSync('.prettierignore','# Ignore artifacts:\nbuild\ncoverage\n')"
+<!-- format all files with Prettier -->
+npx prettier . --write
+<!-- checks files that are already formatted -->
+npx prettier . --check
 
 <!-- ignore (only for educational purposes) -->
 ## npm setup for development

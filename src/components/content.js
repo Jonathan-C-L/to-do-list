@@ -68,7 +68,7 @@ function renderTodoCards(){
         return;
 
     todoArray.forEach((e, index)=> {
-        const todo = JSON.parse(localStorage.getItem(localStorage.key(index)));
+        const todo = JSON.parse(localStorage.getItem(`Todo #${index}`));
         let date = todo.date;
 
         switch(filter.textContent){

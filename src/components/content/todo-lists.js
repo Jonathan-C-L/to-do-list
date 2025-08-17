@@ -45,11 +45,14 @@ function createTodo(){
 }
 function removeTodo(keyNumber){
     let temp = [];
+    // move items in localStorage to an array -> exclude the item matching the item pressed
     for(let i = 0; i < localStorage.length; i++){
         if(i != keyNumber)
             temp.push(localStorage.getItem(`Todo #${i}`));
     }
+    // clear entire localStorage for the items to be reordered
     localStorage.clear();
+    // add the items from the array back into localStorage
     for(let i = 0; i < temp.length; i++){
         localStorage.setItem(`Todo #${i}`, temp[i]);
     }

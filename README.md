@@ -1,13 +1,23 @@
-# npm scripts
+# project summary
+this is a to-do list using vanilla html, css, and javascript that persistently stores and uses user info.
+things learned throughout this project:
+- using the localStorage object to store, access, and use data
+- minor scripting to make the development process more consistent
+- utilizing a javascript library to handle dates (date-fns)
+- first time applying the modular design pattern for software development
+- first time using webpack as part of the development process 
+- setting up the file structure to be clear and concise for readability and accessibility
+
+## npm scripts
 "build": starts up the production environment,
 "start": starts up the development environment,
 "deploy": deploys the code to github pages,
 "initialize": installs dev dependencies for images, styling, and html
 
-# dependencies
+## dependencies
 1. date-fns - npm install date-fns --save
 
-# dev dependencies
+## dev dependencies
 1. ESLint
 <!-- install eslint first -->
 npm init @eslint/config@latest

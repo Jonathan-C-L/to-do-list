@@ -1,6 +1,6 @@
-# project summary
-this is a to-do list using vanilla html, css, and javascript that persistently stores and uses user info.
-things learned throughout this project:
+# Project Summary
+This is a to-do list using vanilla html, css, and javascript that persistently stores user inputted items using the localStorage API.
+Things learned throughout this project:
 - using the localStorage object to store, access, and use data
 - minor scripting to make the development process more consistent
 - utilizing a javascript library to handle dates (date-fns)
